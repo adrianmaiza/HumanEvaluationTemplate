@@ -3,7 +3,6 @@
 
 from jinja2 import FileSystemLoader, Environment
 
-
 def main():
     """Main function."""
     loader = FileSystemLoader(searchpath="./templates")
@@ -11,23 +10,23 @@ def main():
     template = env.get_template("pair_comparison.html.jinja2")
 
     html = template.render(
-        page_title="語者判別實驗表單 1",
+        page_title="Encuesta | Proyecto INVERSO",
         form_url="http://localhost:8888",
         form_id=1,
         questions=[
             {
-                "title": "問題 1",
-                "audio_paths": [
-                    "wavs/test1.wav",
-                    "wavs/test2.wav"
+                "title": "Pregunta 1",
+                "images": [
+                    {"name": "A", "path": "imgs/test_1.png"},
+                    {"name": "B", "path": "imgs/test_2.png"}
                 ],
                 "name": "q1"
             },
             {
-                "title": "問題 2",
-                "audio_paths": [
-                    "wavs/test3.wav",
-                    "wavs/test4.wav"
+                "title": "Pregunta 2",
+                "images": [
+                    {"name": "A", "path": "imgs/test_3.png"},
+                    {"name": "B", "path": "imgs/test_4.png"}
                 ],
                 "name": "q2"
             },
